@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:secondbuy/screens/home/home_screen.dart';
-import 'package:secondbuy/theme.dart';
+
+import 'login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: theme(),
-      home: HomeScreen(),
+      // home: Login(),
+      home: Login(),
     );
   }
 }
