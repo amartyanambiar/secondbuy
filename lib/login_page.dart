@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:secondbuy/signup_page.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -121,7 +122,7 @@ class _LoginState extends State<Login> {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamed(context, 'secondbuy/SignUp');
             },
           )
         ],

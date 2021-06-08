@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondbuy/signup_page.dart';
 
 import 'login_page.dart';
 
@@ -12,8 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      // home: Login(),
       home: Login(),
+      routes: {
+        'secondbuy/Login': (context) => Login(),
+        'secondbuy/SignUp': (context) => SignUp(),
+      },
     );
   }
 }
