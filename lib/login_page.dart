@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
         ),
         onPressed: () {
           Navigator.pop(context);
-          Navigator.pushNamed(context, '/');
+          Navigator.pushNamed(context, '/home');
         },
         child: Text(
           "Login",
@@ -148,7 +148,7 @@ class _LoginState extends State<Login> {
             child: Text(
               "Forgot Password?!",
               style: TextStyle(
-                color: Color(0xaaaaccaa),
+                color: Color(0xfaaaacaa),
                 fontWeight: FontWeight.bold,
                 decoration: TextDecoration.underline,
               ),
@@ -163,7 +163,6 @@ class _LoginState extends State<Login> {
     return showDialog(
       context: context,
       builder: (context) => new AlertDialog(
-        title: new Text('Its okay!'),
         content: new Text('Just tap on Login.'),
       ),
     );
