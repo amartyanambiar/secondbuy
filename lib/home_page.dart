@@ -12,8 +12,8 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("HOME"),
+      body: Column(
+        children: [Text("Home")],
       ),
       bottomNavigationBar: NavBar(),
     );

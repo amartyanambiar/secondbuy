@@ -12,33 +12,42 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return FancyBottomBar(
-      type: FancyType.FancyV2,
+      type: FancyType.FancyV1,
       items: [
         FancyItem(
-          textColor: Colors.orange,
-          title: '',
-          icon: Icon(Icons.home),
-        ),
-        FancyItem(
-          // textColor: Colors.red,
-          title: '',
-          icon: Icon(Icons.trending_up),
+          textColor: Colors.green,
+          title: 'Home',
+          icon: Icon(Icons.home, size: 30),
         ),
         FancyItem(
           textColor: Colors.green,
-          title: '',
-          icon: Icon(Icons.search),
+          title: 'Inbox',
+          icon: Icon(Icons.messenger_rounded, size: 25),
         ),
         FancyItem(
-          textColor: Colors.brown,
-          title: '',
-          icon: Icon(Icons.settings_accessibility_outlined),
+          textColor: Colors.green,
+          title: 'Post',
+          icon: Icon(Icons.camera_alt_rounded, size: 28),
+        ),
+        FancyItem(
+          textColor: Colors.green,
+          title: 'Account',
+          icon: Icon(Icons.account_box, size: 30),
         ),
       ],
       onItemSelected: (index) {
         print(index);
 
+        if (index == 0) {
+          // Navigator.pushNamed(context, 'secondbuy/');
+        }
         if (index == 1) {
+          // Navigator.pushNamed(context, 'secondbuy/');
+        }
+        if (index == 2) {
+          // Navigator.pushNamed(context, 'secondbuy/');
+        }
+        if (index == 3) {
           Navigator.pushNamed(context, 'secondbuy/Login');
         }
       },
