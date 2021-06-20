@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
       systemNavigationBarIconBrightness: Brightness.light,
     ));
     return MaterialApp(
-      debugShowMaterialGrid: true,
+      // debugShowMaterialGrid: true,
+
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(

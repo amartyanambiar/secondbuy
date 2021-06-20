@@ -11,11 +11,55 @@ class home_page extends StatefulWidget {
 class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [Text("Home")],
+    return Container(
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            SizedBox(
+              height: MediaQuery.of(context).padding.top,
+            ),
+            getAppBarUI()
+          ],
+        ),
+        bottomNavigationBar: NavBar(),
       ),
-      bottomNavigationBar: NavBar(),
+    );
+  }
+
+  Widget getAppBarUI() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, left: 18, right: 18),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Welcome to',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    letterSpacing: 0.2,
+                  ),
+                ),
+                Text(
+                  "SecondBuy",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                    letterSpacing: 0.27,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container()
+        ],
+      ),
     );
   }
 }
