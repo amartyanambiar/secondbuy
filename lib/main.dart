@@ -1,10 +1,11 @@
 // @dart=2.9
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:secondbuy/bar/navbar.dart';
 import 'package:secondbuy/home_page.dart';
 import 'package:secondbuy/signup_page.dart';
-
+import 'package:flutter/rendering.dart';
 import 'login_page.dart';
 
 void main() {
@@ -30,7 +31,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         platform: TargetPlatform.android,
       ),
-      home: home_page(),
+
+      home: AnimatedSplashScreen(
+          duration: 3000,
+          splash: Image.asset(
+            "assets/images/shopping-35594_1280.png",
+          ),
+          nextScreen: Login(),
+          splashTransition: SplashTransition.fadeTransition,
+          backgroundColor: Colors.white),
       routes: {
         '/home': (context) => home_page(),
         'secondbuy/Login': (context) => Login(),
