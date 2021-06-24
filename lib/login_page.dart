@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
         ),
         onPressed: () {
           Navigator.pop(context);
-          Navigator.pushNamed(context, '/home');
+          Navigator.pushNamed(context, 'secondbuy/home');
         },
         child: Text(
           "Login",
