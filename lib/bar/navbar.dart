@@ -39,7 +39,7 @@ class _NavBarState extends State<NavBar> {
         print(index);
 
         if (index == 0) {
-          // Navigator.pushNamed(context, 'secondbuy/');
+          Navigator.pushNamed(context, 'secondbuy/home');
         }
         if (index == 1) {
           // Navigator.pushNamed(context, 'secondbuy/');
@@ -48,7 +48,7 @@ class _NavBarState extends State<NavBar> {
           // Navigator.pushNamed(context, 'secondbuy/');
         }
         if (index == 3) {
-          Navigator.pushNamed(context, 'secondbuy/Login');
+          Navigator.pushNamed(context, 'secondbuy/Settings');
         }
       },
     );

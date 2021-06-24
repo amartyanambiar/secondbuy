@@ -2,7 +2,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:secondbuy/bar/navbar.dart';
+import 'package:secondbuy/settings.dart';
+import 'package:settings_ui/settings_ui.dart';
 import 'package:secondbuy/home_page.dart';
 import 'package:secondbuy/signup_page.dart';
 import 'package:flutter/rendering.dart';
@@ -41,9 +42,10 @@ class MyApp extends StatelessWidget {
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor: Colors.white),
       routes: {
-        '/home': (context) => home_page(),
+        'secondbuy/home': (context) => home_page(),
         'secondbuy/Login': (context) => Login(),
         'secondbuy/SignUp': (context) => SignUp(),
+        'secondbuy/Settings': (context) => SettingsScreen(),
       },
     );
   }
