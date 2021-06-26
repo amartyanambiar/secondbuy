@@ -19,19 +19,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
         body: SettingsList(
           sections: [
             SettingsSection(
-              title: 'Section',
+              title: 'Transactions',
               tiles: [
                 SettingsTile(
-                  title: 'Language',
-                  subtitle: 'English',
-                  leading: Icon(Icons.language),
+                  title: 'Purchases & Sales',
+                  leading: Icon(Icons.monetization_on_outlined),
                   onPressed: (BuildContext context) {},
                 ),
-                SettingsTile.switchTile(
-                  title: 'Use fingerprint',
-                  leading: Icon(Icons.fingerprint),
-                  switchValue: value,
-                  onToggle: (bool value) {},
+                SettingsTile(
+                  title: 'Payment & Deposit Methods',
+                  leading: Icon(Icons.wallet_membership_outlined),
+                  onPressed: (BuildContext context) {},
+                  // onToggle: (bool value) {},
                 ),
               ],
             ),

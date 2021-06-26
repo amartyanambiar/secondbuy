@@ -48,6 +48,11 @@ class _NavBarState extends State<NavBar> {
           // Navigator.pushNamed(context, 'secondbuy/');
         }
         if (index == 3) {
+          FancyItem(
+            textColor: Colors.green,
+            title: 'Account',
+            icon: null,
+          );
           Navigator.pushNamed(context, 'secondbuy/Settings');
         }
       },
