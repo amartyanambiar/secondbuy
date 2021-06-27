@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           splash: Image.asset(
             "assets/images/shopping-35594_1280.png",
           ),
-          nextScreen: Login(),
+          nextScreen: home_page(),
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor: Colors.white),
       routes: {

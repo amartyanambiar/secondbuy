@@ -1,5 +1,5 @@
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:secondbuy/bar/navbar.dart';
 
 class home_page extends StatefulWidget {
   const home_page({Key? key}) : super(key: key);
@@ -21,7 +21,20 @@ class _home_pageState extends State<home_page> {
             getAppBarUI()
           ],
         ),
-        bottomNavigationBar: NavBar(),
+        bottomNavigationBar: FancyBottomNavigation(
+          circleColor: Colors.green,
+          inactiveIconColor: Colors.black,
+          textColor: Colors.green,
+          tabs: [
+            TabData(iconData: Icons.home, title: "Home"),
+            TabData(iconData: Icons.messenger_rounded, title: "Inbox"),
+            TabData(iconData: Icons.camera_alt_rounded, title: "Post"),
+            TabData(iconData: Icons.account_box, title: "Account")
+          ],
+          onTabChangedListener: (position) {
+            setState(() {});
+          },
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:secondbuy/bar/navbar.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
+
 import 'package:settings_ui/settings_ui.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        bottomNavigationBar: NavBar(),
+        // bottomNavigationBar: NavBar(),
         body: SettingsList(
           sections: [
             SettingsSection(
