@@ -1,5 +1,6 @@
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:secondbuy/settings.dart';
 
 class home_page extends StatefulWidget {
   const home_page({Key? key}) : super(key: key);
@@ -9,6 +10,8 @@ class home_page extends StatefulWidget {
 }
 
 class _home_pageState extends State<home_page> {
+  int currentPage = 0;
+  GlobalKey bottomNavigationKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,13 +29,25 @@ class _home_pageState extends State<home_page> {
           inactiveIconColor: Colors.black,
           textColor: Colors.green,
           tabs: [
-            TabData(iconData: Icons.home, title: "Home"),
+            TabData(
+                iconData: Icons.home,
+                title: "Home",
+                onclick: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => home_page()))),
             TabData(iconData: Icons.messenger_rounded, title: "Inbox"),
             TabData(iconData: Icons.camera_alt_rounded, title: "Post"),
-            TabData(iconData: Icons.account_box, title: "Account")
+            TabData(
+                iconData: Icons.account_box,
+                title: "Account",
+                onclick: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SettingsScreen()))),
           ],
+          initialSelection: 0,
+          key: bottomNavigationKey,
           onTabChangedListener: (position) {
-            setState(() {});
+            setState(() {
+              currentPage = position;
+            });
           },
         ),
       ),
