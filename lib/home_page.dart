@@ -1,5 +1,6 @@
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+
 import 'package:secondbuy/settings.dart';
 
 class home_page extends StatefulWidget {
@@ -10,8 +11,34 @@ class home_page extends StatefulWidget {
 }
 
 class _home_pageState extends State<home_page> {
-  int currentPage = 0;
-  GlobalKey bottomNavigationKey = GlobalKey();
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 3: Settings',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,31 +51,24 @@ class _home_pageState extends State<home_page> {
             getAppBarUI()
           ],
         ),
-        bottomNavigationBar: FancyBottomNavigation(
-          circleColor: Colors.green,
-          inactiveIconColor: Colors.black,
-          textColor: Colors.green,
-          tabs: [
-            TabData(
-                iconData: Icons.home,
-                title: "Home",
-                onclick: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => home_page()))),
-            TabData(iconData: Icons.messenger_rounded, title: "Inbox"),
-            TabData(iconData: Icons.camera_alt_rounded, title: "Post"),
-            TabData(
-                iconData: Icons.account_box,
-                title: "Account",
-                onclick: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SettingsScreen()))),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
           ],
-          initialSelection: 0,
-          key: bottomNavigationKey,
-          onTabChangedListener: (position) {
-            setState(() {
-              currentPage = position;
-            });
-          },
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
         ),
       ),
     );
