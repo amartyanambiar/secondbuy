@@ -20,15 +20,15 @@ class _home_pageState extends State<home_page> {
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Index 1: Explore',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Post',
       style: optionStyle,
     ),
     Text(
-      'Index 3: Settings',
+      'Index 3: Account',
       style: optionStyle,
     ),
   ];
@@ -36,6 +36,14 @@ class _home_pageState extends State<home_page> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (_selectedIndex == 3) {
+        Navigator.pop(context);
+        Navigator.pushNamed(context, 'secondbuy/Settings');
+      }
+      if (_selectedIndex == 0) {
+        Navigator.pop(context);
+        Navigator.pushNamed(context, 'secondbuy/home');
+      }
     });
   }
 
@@ -54,20 +62,24 @@ class _home_pageState extends State<home_page> {
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home, color: Colors.green),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
+              icon: Icon(Icons.explore, color: Colors.green),
+              label: 'Explore',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
+              icon: Icon(Icons.camera, color: Colors.green),
+              label: 'Post',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_box, color: Colors.green),
+              label: 'Account',
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
+          selectedItemColor: Colors.green[800],
           onTap: _onItemTapped,
         ),
       ),
