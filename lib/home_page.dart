@@ -109,6 +109,7 @@ class _home_pageState extends State<home_page> {
                   "SecondBuy",
                   textAlign: TextAlign.left,
                   style: TextStyle(
+                    color: Colors.green,
                     fontWeight: FontWeight.bold,
                     fontSize: 22,
                     letterSpacing: 0.27,
